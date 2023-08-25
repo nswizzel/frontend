@@ -1,0 +1,124 @@
+/* 3) simple universal selectors */
+* {
+  font-family: cursive;
+}
+
+/* 3) Simple element selector */
+body {
+  margin: 1em;
+}
+h1 {
+  /* 2) Style cascading order */
+  color: blue;
+  font-size: 3em; /* Default h1 font size is 2em */
+}
+
+/* 3) Simple id selector */
+#navbar {
+  overflow: hidden;
+  background-color: purple;
+}
+
+/* 3) Simple class selector */
+.block {
+  padding: 0.5em 1em;
+  background-color: #80008022;
+}
+
+/* 3) Simple grouping selector */
+#navbar a,
+[lang="la"] {
+  padding: 1em;
+}
+ul,
+ol {
+  margin: 0;
+}
+
+/* 3) Combinator descendant selector*/
+#navbar a {
+  float: left;
+  padding: 1em;
+  border-right: 1px solid white;
+  text-decoration: none;
+  color: white;
+}
+
+/* 3) Combinator child selector*/
+#description > p {
+  font-weight: bold;
+}
+
+/* 3) Combinator adjacent sibling selector */
+h3 + p {
+  color: purple;
+}
+
+/* 3) Combinator general sibling selector */
+#description ~ p {
+  font-style: italic;
+}
+
+/* 3) Pseudo-class selectors selectors */
+#navbar a:link {
+  color: white;
+}
+#navbar a:last-child {
+  border-right: 0;
+}
+#navbar a:visited {
+  color: white;
+}
+#navbar a:hover {
+  color: purple;
+  background-color: whitesmoke;
+}
+#navbar a:active {
+  color: white;
+  background-color: black;
+}
+
+/* 3)	Pseudo-elements selectors */
+h3::first-letter {
+  font-size: xx-large;
+}
+h3::before {
+  content: "W";
+}
+h3::after {
+  content: "?";
+}
+.multiline-para::first-line {
+  text-transform: uppercase;
+}
+ul > li::marker {
+  color: purple;
+}
+[lang="la"]::selection {
+  background-color: black;
+  color: white;
+}
+
+/* 3) Attribute selectors */
+a[target] {
+  color: white;
+  background-color: black;
+}
+li[class="list"] {
+  text-decoration: underline;
+}
+[lang="la"] {
+  background-color: whitesmoke;
+}
+li[class~="list"] {
+  font-style: italic;
+}
+li[id^="5"] {
+  font-weight: bolder;
+}
+li[id$="item"] {
+  font-style: italic;
+}
+li[id*="li"] {
+  text-decoration: underline;
+}

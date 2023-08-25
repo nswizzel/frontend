@@ -1,0 +1,105 @@
+<!-- 1) Simple HTML5 document with basic tags -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!-- 1) Head elements: title, meta, base, link, style, script, noscript -->
+  <title>Lorem Ipsum: The placeholder text</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="" target="_blank">
+  <!-- 2) External CSS -->
+  <link rel="stylesheet" href="style1.css">
+  <!-- 2) Internal CSS -->
+  <style>
+    [id="noscript"] {
+      display: none;
+    }
+
+    /* 2) style cascading order */
+    h1 {
+      color: red;
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript" src="script1.js"></script>
+  <noscript>
+    <style>
+      [id="noscript"] {
+        margin: 1em;
+        display: block;
+      }
+
+      [id="noscript"]~div {
+        display: none;
+
+      }
+    </style>
+  </noscript>
+</head>
+
+<body id="set1">
+  <strong id="noscript">Your browser does not support JavaScript. Please enable it and refresh the page!</strong>
+  <div>
+    <!-- 2) Inline CSS & style cascading order -->
+    <h1 style="color: purple">Lorem Ipsum</h1>
+    <div id="navbar">
+      <a href="#set1" target="_self">Home</a>
+      <a href="https://www.lipsum.com/">About</a>
+    </div>
+
+    <p lang="la">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+      laborum.</p>
+
+    <div class="block">
+      <h3>hat is Lorem ipsum</h3>
+      <p>From its medieval origins to the digital era, learn everything there is to know about the ubiquitous lorem
+        ipsum passage.</p>
+      <div>
+        <span>Lorem ipsum is placeholder text commonly used in:</span>
+        <ul>
+          <li class="item list">graphic</li>
+          <li class="list">print</li>
+          <li class="listing">publishing industries</li>
+        </ul>
+        <span>for previewing layouts and visual mockups.</span>
+      </div>
+      <div id="description">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <span>
+          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+            a galley of type and scrambled it to make a type specimen book.</p>
+        </span>
+      </div>
+      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged.</p>
+      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <hr>
+    <div class="block">
+      <h3>hy do we use it</h3>
+      <p>Lorem ipsum was purposefully designed to have no meaning, but appear like real text, making it the perfect
+        placeholder.</p>
+      <p class="multiline-para">It is a long established fact that a reader will be distracted by the readable content
+        of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+        distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English.</p>
+    </div>
+
+    <div>
+      <h2>Exciting titles for Lorem Ipsum:</h2>
+      <ol>
+        <li id="item">Exploring Lorem Ipsum: The Art of Filler Text</li>
+        <li id="li">Unveiling Lorem Ipsum: Beyond the Words</li>
+        <li id="3-litem">Lorem Ipsum: The Typography Enigma</li>
+        <li id="5-1">Embracing Lorem Ipsum: Placeholder Magic</li>
+        <li id="5-li">Lorem Ipsum Chronicles: Journey into Filler Text</li>
+      </ol>
+    </div>
+  </div>
+</body>
+
+</html>
