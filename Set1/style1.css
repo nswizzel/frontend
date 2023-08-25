@@ -8,7 +8,7 @@ body {
   margin: 1em;
 }
 h1 {
-  /* 2) Style cascading order */
+  /* 2) Style cascading order: 3 */
   color: blue;
   font-size: 3em; /* Default h1 font size is 2em */
 }
