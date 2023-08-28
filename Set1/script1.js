@@ -11,56 +11,60 @@ const names3 = new Array("Kyle", "Lina", "Mary");
 console.log("4) names3 array using new keyword: ", names3);
 
 // Accessing array element
-console.log('4) accessing 1st element of names1 using index: ', names1[0]);
-// Accessing the entire array
-console.log('4) accessing names2 array using variable: ', names2);
-console.log('4) accessing names2 array using valueOf method: ', names2.valueOf());
+console.log('4) accessing 2nd element of names3 using index: ', names3[1]);
+// Also methods: at, slice
 
-// Manipulating array element by accessing element
+// Manipulating array element
 names3[1] = "Leo";
-console.log('4) manipulating names3 by accessing element index: ', names3);
+console.log('4) 2nd element of names3 after manipulating it: ', names3[1]);
+// Also methods: fill, splice, copyWithin
+
+// Accessing entire array
+console.log('4) accessing names3 array using variable: ', names3);
+console.log('4) accessing names3 array using valueOf method: ', names3.valueOf());
+// Also slice method
 
 // recognizing an array
-console.log('4) names2 is an array? ', Array.isArray(names1));
-console.log('4) names3 is an array? ', names2 instanceof Array);
+console.log('4) names1 is an array? ', Array.isArray(names1));
+console.log('4) names2 is an array? ', names2 instanceof Array);
 
 console.log(''); /* line break */
 
 /* Solution 5 */
-console.log('5) names1 = ', names1);
+console.log('names1 =', names1);
 //Size of an array
-const names1ArrayLength = names1.length;
-console.log('5) Size of the names1 array is: ', names1ArrayLength);
+const names1Length = names1.length;
+console.log('5) Size of the names1 array is: ', names1Length);
 
 // First & Last element of array
 console.log('5) First element of the names1 array: ', names1[0]);
-console.log('5) Last element of the names1 array: ', names1[names1ArrayLength - 1]);
+console.log('5) Last element of the names1 array: ', names1[names1Length - 1]);
 
 // Adding element using length property
-names1[names1ArrayLength] = 'Don';
+names1[names1Length] = 'Don';
 console.log('5) names1 array after adding new element: ', names1);
 
 console.log(''); /* line break */
 
 /* Solution 6: methods to add new element to an array */
-console.log('6) names2 array =', names2);
+console.log('6) names2 =', names2);
 names2.push('Xavier');
-console.log('6) Added "Xavier" using push method:', names2);
+console.log('6) Added "Xavier" in names2 array using push method:', names2);
 names2.unshift('Winnie');
-console.log('6) Added "Winnie" using unshift method:', names2);
+console.log('6) Added "Winnie" in names2 array using unshift method:', names2);
 names2.splice(3, 0, "Vikram");
-console.log('6) Added "Vikram" using splice method:', names2);
+console.log('6) Added "Vikram" in names2 array using splice method:', names2);
 
 console.log(''); /* line break */
 
 /* Solution 7:  methods to delete element from an array */
-console.log('7) names2 array =', names2);
+console.log('7) names2 =', names2);
 names2.pop('Xavier');
-console.log('7) Deleting "Xavier" using pop method:', names2);
+console.log('7) Deleting "Xavier" in names2 array using pop method:', names2);
 names2.shift('Winnie');
-console.log('7) Deleting "Winnie" using shift method:', names2);
+console.log('7) Deleting "Winnie" in names2 array using shift method:', names2);
 names2.splice(2, 1);
-console.log('7) Deleting "Vikram" using splice method:', names2);
+console.log('7) Deleting "Vikram" in names2 array using splice method:', names2);
 
 console.log(''); /* line break */
 
@@ -107,16 +111,13 @@ console.log(''); /* line break */
 console.log('10) find method to check element 5:', numbers.find(num => num === 5));
 console.log('10) some method to check element 5:', numbers.some(num => num === 5));
 console.log('10) includes method to check element 5:', numbers.includes(5));
-console.log('10) filter method to check element 5:', numbers.filter(num => num === 5));
-console.log('10) findIndex method to check element 50:', numbers.findIndex(num => num === 50));
-console.log('10) indexOf method to check element 50:', numbers.indexOf(50));
-console.log('10) lastIndexOf method to check element 50:', numbers.lastIndexOf(50));
+// Also methods: filter, indexOf, lastIndexOf, findIndex
 
 console.log(''); /* line break */
 
 /* Solution 10: methods used to access last element, part of array along with their return value */
-console.log('11) accessing last element of names1 using at at: ', names1.at(-1));
-console.log('11) accessing part of an array using at slice: ', names1.slice(1,2));
+console.log('11) accessing last element of names1 using at method: ', names1.at(-1));
+console.log('11) accessing part of an array using at slice method: ', names1.slice(1, 2));
 
 console.log(''); /* line break */
 
@@ -127,24 +128,32 @@ console.log(''); /* line break */
 
 /* Solution 13: Sorting & reversing it */
 // for number array
-console.log('13) Sorting number array: ', numbers.sort((a, b) => (a - b)));
-console.log('13) Reversing number array: ', numbers.sort((a, b) => (b - a)));
+function sortArrayOfNumber(sortOrder) {
+  const array = numbers.slice();
+  return array.sort((num1, num2) => sortOrder === 'ascending' ? (num1 - num2) : (num2 - num1));
+}
+console.log('13) Sorting number array in ascending order: ', sortArrayOfNumber('ascending'));
+console.log('13) Sorting number array in descending order: ', sortArrayOfNumber('descending'));
+console.log('13) Reversing sorted number array using reverse method: ', sortArrayOfNumber('ascending').reverse());
 
 // for array of objects 
-function sortArray(a, b) {
-  const x = a.item.toLowerCase();
-  const y = b.item.toLowerCase();
-  if (x < y) { 
-    return -1;
-  }
-  if (x > y) {
-    return 1; 
-  }
-  return 0;
+function sortArrayOfObjects(sortOrder) {
+  const array = stationary.slice();
+  return array.sort((element1, element2) => {
+    const value1 = element1.item.toLowerCase();
+    const value2 = element2.item.toLowerCase();
+    if (value1 < value2) {
+      return sortOrder === 'ascending' ? -1 : 1;
+    }
+    if (value1 > value2) {
+      return sortOrder === 'ascending' ? 1 : -1;
+    }
+    return 0;
+  });
 }
-console.log('13) Sorting array of objects: ', stationary.sort((a, b) => sortArray(a,b)));
-const sortedStationary = stationary.slice();
-console.log('13) Reversing sorted array of objects: ', sortedStationary.reverse());
+console.log('13) Sorting array of objects in ascending order: ', sortArrayOfObjects('ascending'));
+console.log('13) Sorting array of objects in descending order: ', sortArrayOfObjects('descending'));
+console.log('13) Reversing sorted array of objects using reverse method: ', sortArrayOfObjects('ascending').reverse());
 
 console.log(''); /* line break */
 
@@ -154,7 +163,7 @@ console.log('14) Concatenating sub-array elements: ', [1, 2, [3, 4], [5, [6, 7]]
 console.log(''); /* line break */
 
 /* Solution 15: replacing last element with first element using methods */
-let array1 = [1, 2, 3, 4, 5]; 
+let array1 = [1, 2, 3, 4, 5];
 // using fill
 console.log('15) replacing last element with first using fill', array1.fill(array1[0], array1.length - 1));
 // using copyWithin
@@ -177,3 +186,8 @@ const vowels = Array.from("aeiou");
 console.log('17) string to array using from method: ', vowels);
 console.log('17) array to string using join method: ', vowels.join());
 console.log('17) array to string using toString method: ', vowels.toString());
+
+/* Solution 18: methods that create array iterator objects */
+console.log('18: entries method: ', array2.entries());
+console.log('18: keys method: ', array2.keys());
+console.log('18: values method: ', array2.values());
