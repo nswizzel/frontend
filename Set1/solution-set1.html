@@ -6,9 +6,9 @@
   <title>Lorem Ipsum: The placeholder text</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="" target="_blank">
-  <!-- 2) External CSS -->
+  <!-- 2) External CSS, style cascading order: 2 -->
   <link rel="stylesheet" href="style1.css">
-  <!-- 2) Internal CSS -->
+  <!-- 2) Internal CSS, style cascading order: 2 -->
   <style>
     [id="noscript"] {
       display: none;
@@ -39,7 +39,7 @@
 <body id="set1">
   <strong id="noscript">Your browser does not support JavaScript. Please enable it and refresh the page!</strong>
   <div>
-    <!-- 2) Inline CSS & style cascading order -->
+    <!-- 2) Inline CSS & style cascading order: 1 -->
     <h1 style="color: purple">Lorem Ipsum</h1>
     <div id="navbar">
       <a href="#set1" target="_self">Home</a>
